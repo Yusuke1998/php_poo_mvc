@@ -28,6 +28,18 @@ $controllerPath = 'Controllers/'.$controller.'.php';
 // Verificamos si existe dicho archivo señalado en '$controllerPath'
 if (file_exists($controllerPath)) {
 	require($controllerPath);
+	// Instanciamos el controlador que recibimos por url luego de verificar que si existe
+	$controller = new $controller;
+	// Verificamos que exista la variable $method
+	if (isset($method)) {
+		// Verificamos que exista el metodo en el controlador instanciado
+		if (method_exists($controller, $method)) {
+			// Invocamos el metodo del controlador
+			$controller->$method();
+		}else{
+			echo "El metodo no existe D:";
+		}
+	}
 }else{
 	echo "No se entrontro el controlador";
 }
