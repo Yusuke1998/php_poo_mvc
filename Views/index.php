@@ -8,5 +8,18 @@
 </head>
 <body>
 	<h1>Soy el primer index view</h1>
+	<?php 
+		var_dump($datos);
+	 ?>
+	 <?php 
+	 	foreach ($datos as $key => $value) {
+	 ?>
+	 	<ul>
+	 		<li><?=$value; ?></li>
+	 	</ul>
+
+	 <?php 
+	 	}
+	  ?>
 </body>
 </html>
