@@ -17,8 +17,9 @@ class Index extends Controllers
 		require(VIEWS.'index.php');
 	}
 
-	public function maria(){
-		echo "Hola soy maria";
+	public function maria($valor){
+
+		echo "Hola soy maria ".$valor;
 	}
 }
 

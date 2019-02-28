@@ -13,6 +13,12 @@ if (isset($url[0])) {
 if (isset($url[1])) {
 	$method = $url[1];
 }
+// Si el array en la posicion dos esta definido significa que se ha enviado un parametro y se asignara en la variable $params
+if (isset($url[2])) {
+	if ($url[1] != '') {
+		$params = $url[2];
+	}
+}
 // Aqui se autocargan las clases de todos los archivos existentes en la carpeta Library
 spl_autoload_register(function($class){
 // Si existen los archivos se les llama
@@ -34,8 +40,14 @@ if (file_exists($controllerPath)) {
 	if (isset($method)) {
 		// Verificamos que exista el metodo en el controlador instanciado
 		if (method_exists($controller, $method)) {
-			// Invocamos el metodo del controlador
-			$controller->$method();
+			// Verificamos si la variable que contendra parametros esta definida
+			if (isset($params)) {
+				// Si el parametro existe entonces lo pasamos al invocar el metodo
+				$controller->{$method}($params);
+			}else{
+				// Invocamos el metodo del controlador cuando no recibe parametros
+				$controller->$method();
+			}
 		}else{
 			echo "El metodo no existe D:";
 		}
