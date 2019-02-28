@@ -7,6 +7,7 @@ class Controllers
 	function __construct()
 	{
 		$this->loadClassModels();
+		$this->view = new Views();
 	}
 
 	public function loadClassModels(){

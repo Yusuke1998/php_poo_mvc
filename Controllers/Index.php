@@ -11,15 +11,8 @@ class Index extends Controllers
 	}
 
 	public function index(){
-		$this->response = $this->model->datosPersonales();
-		$datos = $this->response;
 		// Requerimos la vista index y colocamos la constante VIEWS porque contiene la direccion
-		require(VIEWS.'index.php');
-	}
-
-	public function maria($valor){
-
-		echo "Hola soy maria ".$valor;
+		$this->view->render($this,'index');
 	}
 }
 
