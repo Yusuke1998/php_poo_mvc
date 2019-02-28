@@ -1,7 +1,10 @@
-# Activar RewriteEngine
 #RewriteCond %{REQUEST_FILENAME} ! -d
 #RewriteCond %{REQUEST_FILENAME} ! -f
 #RewriteCond %{REQUEST_FILENAME} ! -l
+#RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
 
+
+# Activar RewriteEngine, modo de escritura
 RewriteEngine on
-RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+#Regla de escritura, donde dice que acepta valores a-zA-Z0-9/ en la variable $url
+RewriteRule ^([a-zA-Z0-9/]+)$ index.php?url=$1

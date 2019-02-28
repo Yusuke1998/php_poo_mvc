@@ -20,8 +20,6 @@ class Controllers
 			require($path);
 			// Instanciamos la clase que viene por la variable model
 			$this->model = new $model();
-		}else{
-			echo "El modelo no existe!";
 		}
 	}
 }

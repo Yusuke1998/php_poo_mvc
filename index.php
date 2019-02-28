@@ -25,7 +25,7 @@ spl_autoload_register(function($class){
 	if (file_exists(LBS.$class.".php")) {
 		require(LBS.$class.".php");
 	}else{
-		echo "No se entrontro la clase!";
+		echo "No se encontro la clase!";
 	}
 });
 
@@ -53,7 +53,7 @@ if (file_exists($controllerPath)) {
 		}
 	}
 }else{
-	echo "No se entrontro el controlador";
+	echo "No se encontro el controlador";
 }
 
 ?>
