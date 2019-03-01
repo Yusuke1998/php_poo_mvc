@@ -14,6 +14,11 @@ class Index extends Controllers
 		// Requerimos la vista index y colocamos la constante VIEWS porque contiene la direccion
 		$this->view->render($this,'index');
 	}
+
+	public function signIn(){
+		// Requerimos la vista signIn y colocamos la constante VIEWS porque contiene la direccion, '$this' significa que hacemos referencia al controlador en el que estamos
+		$this->view->render($this,'signIn');
+	}
 }
 
 ?>

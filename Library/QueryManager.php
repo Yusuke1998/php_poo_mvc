@@ -31,6 +31,23 @@ class QueryManager extends Controllers
 			return $response;
 		}
 	}
+
+	function insert($table, $colums){
+		$columnas = null;
+		$datos = null;
+		foreach ($colums as $key => $value) {
+			// Se itera el array y se concatenan como string separados por coma ','
+			$columnas.=$key.',';
+			$datos.='"'.$value.'",';
+		}
+		// substr, extrae la ',' al final de cada cadena
+		$columnas = substr($columnas, 0, -1);
+		$datos = substr($datos, 0, -1);
+		// Se crea la consulta y se le integran las variables de datos ya preparadas adecuadamente
+		$stmt = "INSERT INTO ".$table." (".$columnas.") VALUES(".$datos.")";
+		// Se ejecuta la consulta
+		$result = $this->link->query($stmt) or die($this->link->error);
+	}
 }
 
 ?>

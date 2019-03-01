@@ -10,7 +10,12 @@ class Principal extends Controllers
 	}
 
 	function principal(){
-		echo "Hola mundo!";
+		$username = Session::getSession('User');
+		if (!empty($username)) {
+			$this->view->render($this,'Principal');
+		}else{
+			header('Location:'.URL);
+		}
 	}
 
 

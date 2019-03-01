@@ -16,5 +16,12 @@
 				</div>
 			</form>
 		</div>
+		<div class="card-footer">
+			<a href="<?=URL; ?>Index/signIn" title="Nuevo usuario para registrar!">Registrar</a>
+		</div>
 	</div>
 </div>
+<script>
+	var loginUrl = "<?php echo URL; ?>User/userLogin";
+	var baseurl = "<?php echo URL; ?>";
+</script>

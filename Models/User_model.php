@@ -17,6 +17,13 @@ class User_model extends Conexion
 		// Se retorna el resultado de la consulta
 		return $this->db->select1($fields,'user',$where);
 	}
+
+	// Este metodo registra un nuevo usuario
+	function userRegister($registro)
+	{
+		// Se retorna el resultado de la consulta
+		return $this->db->insert('user',$registro);
+	}
 }
 
 ?>
