@@ -11,6 +11,7 @@ $('document').ready(function(){
 				alert('Bienvenido!');
 				document.location = 'http://localhost/JHONNY/practicas_php_basico/php_poo_mvc/Principal/principal';
 			}else{
+				console.log("Error!");
 				alert('Verifique su contraseña y/o correo!');
 			}
 		});

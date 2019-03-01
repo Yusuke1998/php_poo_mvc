@@ -1,6 +1,6 @@
 <div class="container"> 
-	<div class="card mt-5">
-		<div class="card-title mt-2 h4 m-auto">
+	<div class="card mt-5 col-md-5 mx-auto">
+		<div class="card-title mt-md-2 h4 m-auto">
 			Iniciar sesion
 		</div>
 		<div class="card-body">
